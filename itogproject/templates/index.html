@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+	    <meta charset="UTF-8">
+        <title>Страница поиска</title>
+    </head>
+    <body>
+        <form method='post'>
+            <h2>Введите ваш запрос:</h2>
+            <input type="text" name="query">
+            <br>
+            <input type="submit" value="Поиск">
+        </form>
+        {% if query %}
+            <h3>{{ query }}<h3>
+            {% for href, mark in links %}
+                <ul><a href='{{ href }}'>{{ href }}</a>{{ mark }}</ul>
+            {% endfor %}
+        {% endif %}
+    </body>
+</html>
